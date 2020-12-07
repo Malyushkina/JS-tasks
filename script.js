@@ -79,3 +79,10 @@ for (let i = 0; i < arr5.length; i++) {
 }
 sqrtSum = Math.sqrt(currentSum);
 console.log(sqrtSum);
+
+// 6. В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату в формат '31/12/2025'.
+
+let date6 = "2025-12-31";
+let arr6 = date6.split("-");
+let newDate = arr6[2] + "/" + arr6[1] + "/" + arr6[0];
+console.log(newDate);
