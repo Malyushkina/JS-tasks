@@ -105,7 +105,6 @@ console.log(flag);
 
 let arr8 = [1, 5, 2, 6, 8, 8, 6, 8];
 let flag8 = hasNumber(arr8);
-console.log(flag8);
 
 function hasNumber(myArr) {
     let currentNum = myArr[0];
@@ -118,3 +117,19 @@ function hasNumber(myArr) {
     }
     return false;
 }
+if (flag8 == true){
+   console.log("Да");
+}else{
+    console.log("Нет");
+}
+
+// 9.  Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. 
+// Если отрицательное - пусть функция вернет true, а если нет - false.
+
+let number9 =- 10;
+
+function isPositive(n) {
+    return n >= 0;
+}
+let result9 = isPositive(number9);
+console.log(result9);
