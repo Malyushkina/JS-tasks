@@ -100,3 +100,21 @@ for (let i = 2; i < number7; i++) {
     }
 }
 console.log(flag);
+
+// 8. Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть - выведите 'да', а если нет - выведите 'нет'.
+
+let arr8 = [1, 5, 2, 6, 8, 8, 6, 8];
+let flag8 = hasNumber(arr8);
+console.log(flag8);
+
+function hasNumber(myArr) {
+    let currentNum = myArr[0];
+    for (let i = 1; i < myArr.length; i++) {
+        if (myArr[i] == currentNum) {
+            return true;
+        } else {
+            currentNum = myArr[i];
+        }
+    }
+    return false;
+}
