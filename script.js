@@ -117,19 +117,53 @@ function hasNumber(myArr) {
     }
     return false;
 }
-if (flag8 == true){
-   console.log("Да");
-}else{
+if (flag8 == true) {
+    console.log("Да");
+} else {
     console.log("Нет");
 }
 
 // 9.  Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. 
 // Если отрицательное - пусть функция вернет true, а если нет - false.
 
-let number9 =- 10;
+let number9 = -10;
 
 function isPositive(n) {
     return n >= 0;
 }
 let result9 = isPositive(number9);
 console.log(result9);
+
+//10. Нарисуйте в браузере шахматную доску произвольного размера (квадратную) с помощью "х" и "0".
+
+let сhessBoard = document.querySelector(".сhess-board"),
+    inputChessRange = document.querySelector(".chess-range");
+
+
+inputChessRange.addEventListener("input", function () {
+    сhessBoard.innerHTML = "";
+    let chessRange = inputChessRange.value;
+    for (let i = 0; i < chessRange; i++) {
+        let str = "";
+        if (i % 2 == 0) {
+            for (let j = 0; j < chessRange; j++) {
+                if (j % 2 == 0) {
+                    str += " x";
+                } else {
+                    str += " 0";
+                }
+            }
+        }else{
+            for (let j = 0; j < chessRange; j++) {
+                if (j % 2 != 0) {
+                    str += " x";
+                } else {
+                    str += " 0";
+                }
+            }
+
+        }
+
+        сhessBoard.innerHTML += str + "<br>";
+    }
+});
