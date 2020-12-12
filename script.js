@@ -263,3 +263,15 @@ function getEnenNumber(arr) {
     return newArr;
 }
 console.log(getEnenNumber(arr16));
+
+// 17. Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
+function getDivisors(n) {
+    let divisors = [];
+    for (let i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            divisors.push(i);
+        }
+    }return divisors;
+}
+console.log(getDivisors(78));
