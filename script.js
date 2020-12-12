@@ -247,4 +247,19 @@ function years(firstYear, lastYear) {
     }
     return unhappyYears;
 }
-console.log(years(1,2020));
+console.log(years(1, 2020));
+
+// 16. Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел.
+
+let arr16 = [22, 15, 898, 16, 27, 31, 5];
+
+function getEnenNumber(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+console.log(getEnenNumber(arr16));
