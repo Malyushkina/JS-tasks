@@ -232,3 +232,19 @@ function getDigitsSum(num) {
     return sum14;
 }
 console.log(getDigitsSum(585));
+
+// 15. Найдите все года от 1 до 2020, сумма цифр которых равна 13. Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи.
+
+let unhappyYears = 0;
+
+function years(firstYear, lastYear) {
+    let currentYear = 0;
+    for (let i = firstYear; i <= lastYear; i++) {
+        currentYear = getDigitsSum(i);
+        if (currentYear == 13) {
+            unhappyYears++;
+        }
+    }
+    return unhappyYears;
+}
+console.log(years(1,2020));
