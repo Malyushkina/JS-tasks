@@ -203,7 +203,9 @@ let arr13 = [
     ],
     [
         [5, 6],
-        [7, 8]
+        [7, 8],
+        [12, 18],
+        ["1", "10"]
     ]
 ];
 let sum13 = 0;
@@ -212,10 +214,21 @@ function sumElements(arr) {
     for (i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
             for (let k = 0; k < arr[i][j].length; k++) {
-                sum13 += arr[i][j][k];
+                sum13 += +arr[i][j][k];
             }
         }
     }
     return sum13;
 }
 console.log(sumElements(arr13));
+
+// 14. Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
+function getDigitsSum(num) {
+    let sum14 = 0;
+    num += "";
+    for (i = 0; i < num.length; i++) {
+        sum14 += +num[i];
+    }
+    return sum14;
+}
+console.log(getDigitsSum(585));
