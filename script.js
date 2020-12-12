@@ -153,7 +153,7 @@ inputChessRange.addEventListener("input", function () {
                     str += " 0";
                 }
             }
-        }else{
+        } else {
             for (let j = 0; j < chessRange; j++) {
                 if (j % 2 != 0) {
                     str += " x";
@@ -167,3 +167,15 @@ inputChessRange.addEventListener("input", function () {
         сhessBoard.innerHTML += str + "<br>";
     }
 });
+
+// 11. Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями. Первым параметром функция принимает значение,
+// которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+
+function arrayFill(elem, num) {
+    let myArr = [];
+    for (let i = 0; i < num; i++) {
+        myArr.push(elem);
+    }
+    return myArr;
+}
+console.log(arrayFill(5,7));
