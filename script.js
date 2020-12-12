@@ -178,4 +178,44 @@ function arrayFill(elem, num) {
     }
     return myArr;
 }
-console.log(arrayFill(5,7));
+console.log(arrayFill(5, 7));
+
+// 12. Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
+arr12 = [12, 24, "gfgf"];
+
+function arrayReverse(arr) {
+    let reverseArr = [];
+    arr.forEach(element => {
+        reverseArr.unshift(element);
+    });
+    return reverseArr;
+}
+arr12 = arrayReverse(arr12);
+console.log(arr12);
+
+// 13. Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]. 
+//Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.  
+
+let arr13 = [
+    [
+        [1, 2],
+        [3, 4]
+    ],
+    [
+        [5, 6],
+        [7, 8]
+    ]
+];
+let sum13 = 0;
+
+function sumElements(arr) {
+    for (i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            for (let k = 0; k < arr[i][j].length; k++) {
+                sum13 += arr[i][j][k];
+            }
+        }
+    }
+    return sum13;
+}
+console.log(sumElements(arr13));
