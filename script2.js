@@ -3,17 +3,34 @@
 
 let str18 = "Я пришёл к тебе с приветом, рассказать, что солнце встало...";
 
-function ucfirst(word) {
-    let firstLetter = word[0].toUpperCase() + word.slice(1);
-    return firstLetter;
-}
-
 function ucStr(str) {
     let strToArr = str.split(" "),
         newStr = "";
     for (let i = 0; i < strToArr.length; i++) {
-        newStr += " " + ucfirst(strToArr[i]);
+        newStr += " " + ucFirst(strToArr[i]);
     }
     return newStr;
 }
 console.log(ucStr(str18));
+
+function ucFirst(word) {
+    let firstLetter = word[0].toUpperCase() + word.slice(1);
+    return firstLetter;
+}
+
+// 19. Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+let str19 = 'var_text_hello';
+
+function toCamelCase(str) {
+    let arrCamelCase = str.split("_"),
+        strCamelCase = arrCamelCase[0];
+    for (let i = 1; i < arrCamelCase.length; i++) {
+        strCamelCase += ucFirst(arrCamelCase[i]);
+    }
+    return (strCamelCase);
+}
+console.log(toCamelCase(str19));
+
+// 20. Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
+// Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. Функция должна возвращать true или false.
