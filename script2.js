@@ -34,6 +34,7 @@ console.log(toCamelCase(str19));
 
 // 20. Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
 // Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. Функция должна возвращать true или false.
+
 let myArr20 = [15, 4, 59, 24, 11];
 
 function inArray(text, arr) {
@@ -42,6 +43,22 @@ function inArray(text, arr) {
             return true;
         }
     };
-return false;
+    return false;
 }
 console.log(inArray(23, myArr20));
+
+// 21. Дана строка, например, '123456'. Сделайте из нее '214365'.
+let str21 = '1234567891';
+
+function rev(str) {
+    let newStr="";
+    for (let i = 0; i < str.length; i++) {
+        if (i % 2 == 0) {
+            let first = str[i],
+                second = str[i + 1];
+            newStr += second + first;
+        }
+    }
+    return newStr;
+}
+console.log(rev(str21));
