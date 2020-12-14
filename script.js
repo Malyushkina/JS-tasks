@@ -272,6 +272,9 @@ function getDivisors(n) {
         if (n % i == 0) {
             divisors.push(i);
         }
-    }return divisors;
+    }
+    return divisors;
 }
 console.log(getDivisors(78));
+
+
