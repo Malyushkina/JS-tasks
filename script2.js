@@ -51,7 +51,7 @@ console.log(inArray(23, myArr20));
 let str21 = '1234567891';
 
 function rev(str) {
-    let newStr="";
+    let newStr = "";
     for (let i = 0; i < str.length; i++) {
         if (i % 2 == 0) {
             let first = str[i],
@@ -62,3 +62,42 @@ function rev(str) {
     return newStr;
 }
 console.log(rev(str21));
+
+// 22. Дан массив с числами. Выведите последовательно его элементы используя рекурсию и не используя цикл.
+
+let myArr22 = [1, 15, 26, 68, 4];
+
+function rec(arr) {
+    if (arr.length > 0) {
+        console.log(arr[0]);
+        arr.shift();
+        rec(arr);
+    }
+}
+rec(myArr22);
+
+// 23. Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры. И так, пока сумма не станет однозначным числом (9 и менее).
+
+let num23 = 795;
+let currentSum = 0;
+
+function getSum(n) {
+
+    if (n != 0) {
+        console.log("Начинаю вычисление");
+        let lastNum = n % 10;
+        console.log("lastNum: " + lastNum);
+        n = Math.floor(n / 10);
+        console.log("n: " + n);
+        currentSum += lastNum;
+        console.log("currentSum: " + currentSum);
+        getSum(n);
+    }
+    if (currentSum > 9) {
+        n = currentSum;
+        currentSum = 0;
+        getSum(n);
+    }
+    return n;
+}
+getSum(num23);
