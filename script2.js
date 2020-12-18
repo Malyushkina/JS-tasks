@@ -42,7 +42,7 @@ function inArray(text, arr) {
         if (arr[i] == text) {
             return true;
         }
-    };
+    }
     return false;
 }
 console.log(inArray(23, myArr20));
@@ -78,8 +78,8 @@ rec(myArr22);
 
 // 23. Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры. И так, пока сумма не станет однозначным числом (9 и менее).
 
-let num23 = 795;
-let currentSum = 0;
+let num23 = 99999999999999;
+let currentSum23 = 0;
 
 function getSum(n) {
 
@@ -89,15 +89,37 @@ function getSum(n) {
         console.log("lastNum: " + lastNum);
         n = Math.floor(n / 10);
         console.log("n: " + n);
-        currentSum += lastNum;
-        console.log("currentSum: " + currentSum);
+        currentSum23 += lastNum;
+        console.log("currentSum: " + currentSum23);
         getSum(n);
     }
-    if (currentSum > 9) {
-        n = currentSum;
-        currentSum = 0;
+    if (currentSum23 > 9) {
+        console.log("Упс, текущая сумма больше 9!");
+        n = currentSum23;
+        currentSum23 = 0;
         getSum(n);
     }
     return n;
 }
 getSum(num23);
+
+// 24. На странице разместить кнопку, при нажатии на которую, квадрат рядом меняет цвет случайным образом.
+
+const btn24 = document.querySelector(".button--task24");
+const bigSquare = document.getElementById("bigSquare");
+const littleSquare = document.getElementById("littleSquare");
+const btnStop = document.getElementById("btnStop");
+var timer;
+btn24.addEventListener("click", function () {
+    clearInterval(timer);
+    timer = setInterval(function () {
+        let r, g, b;
+        r = Math.floor(Math.random() * 256);
+        g = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
+        littleSquare.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    }, 100);
+});
+btnStop.addEventListener("click", function () {
+    clearInterval(timer);
+});
