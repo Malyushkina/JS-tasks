@@ -117,26 +117,14 @@ btn24.addEventListener("click", function () {
     timer = setInterval(function () {
         deg = Math.floor(Math.random() * 360);
         deg++;
-       
-        r = getColorUp();
-        g = getColorUp();
-        b = getColorUp();
+
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
 
         littleSquare.style.background = "linear-gradient(" + deg + "deg, rgb(" + r + "," + g + "," + b + "), rgb(" + b + "," + g + "," + r + "))";
-    }, 600);
+    }, 1000);
 });
-
-function getColorUp() {
-   let n = Math.floor(Math.random() * 255);
-    n += 5;
-    if (n >= 255) {
-        n -= 5;
-    }
-    if (n <= 0) {
-        n += 5;
-    }
-    return n;
-}
 
 btnStop.addEventListener("click", function () {
     clearInterval(timer);
