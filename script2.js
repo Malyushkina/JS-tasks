@@ -111,32 +111,33 @@ const littleSquare = document.getElementById("littleSquare");
 const btnStop = document.getElementById("btnStop");
 var timer;
 let r, g, b, deg;
-r = Math.floor(Math.random() * 255);
-g = Math.floor(Math.random() * 255);
-b = Math.floor(Math.random() * 255);
-deg = Math.floor(Math.random() * 360);
+
 btn24.addEventListener("click", function () {
     clearInterval(timer);
     timer = setInterval(function () {
-        r += 5;
-        g += 5;
-        b += 5;
+        deg = Math.floor(Math.random() * 360);
         deg++;
-        if (r >= 255) {
-            r = 0;
-        }
-
-        if (g >= 255) {
-            g = 0;
-        }
-
-        if (b >= 255) {
-            b = 0;
-        }
+       
+        r = getColorUp();
+        g = getColorUp();
+        b = getColorUp();
 
         littleSquare.style.background = "linear-gradient(" + deg + "deg, rgb(" + r + "," + g + "," + b + "), rgb(" + b + "," + g + "," + r + "))";
-    }, 200);
+    }, 600);
 });
+
+function getColorUp() {
+   let n = Math.floor(Math.random() * 255);
+    n += 5;
+    if (n >= 255) {
+        n -= 5;
+    }
+    if (n <= 0) {
+        n += 5;
+    }
+    return n;
+}
+
 btnStop.addEventListener("click", function () {
     clearInterval(timer);
 });
