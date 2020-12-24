@@ -4,6 +4,7 @@
     border: 2px solid gray;
 }
 #littleSquare{
+    position: relative;
     width: 100px;
     height: 100px;
     background-color: antiquewhite;

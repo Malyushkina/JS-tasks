@@ -104,26 +104,48 @@ function getSum(n) {
 getSum(num23);
 
 // 24. На странице разместить кнопку, при нажатии на которую, квадрат рядом меняет цвет случайным образом.
+// 25. теперь этот квадрат должен начать перемещаться вправо-вниз-влево-вверх.
 
-const btn24 = document.querySelector(".button--task24");
+const btnStart = document.querySelector(".button--task24");
 const bigSquare = document.getElementById("bigSquare");
 const littleSquare = document.getElementById("littleSquare");
 const btnStop = document.getElementById("btnStop");
 var timer;
-let r, g, b, deg;
+let r, g, b, deg, pos;
 
-btn24.addEventListener("click", function () {
+btnStart.addEventListener("click", function () {
     clearInterval(timer);
-    timer = setInterval(function () {
-        deg = Math.floor(Math.random() * 360);
-        deg++;
 
+    deg = Math.floor(Math.random() * 360);
+    let x1 = 0,
+        y1 = 0,
+        x2 = 300,
+        y2 = 300;
+    timer = setInterval(function () {
         r = Math.floor(Math.random() * 255);
         g = Math.floor(Math.random() * 255);
         b = Math.floor(Math.random() * 255);
-
-        littleSquare.style.background = "linear-gradient(" + deg + "deg, rgb(" + r + "," + g + "," + b + "), rgb(" + b + "," + g + "," + r + "))";
-    }, 1000);
+        deg++;
+        littleSquare.style.background = `linear-gradient( ${deg}deg, rgb(${r},${g},${b}), rgb(${g},${b},${r}))`;
+        if (x1 < 300) {
+            x1 += 10;
+            littleSquare.style.left = x1 + "px";
+        } else if (y1 < 300) {
+            y1 += 10;
+            littleSquare.style.top = y1 + "px";
+        } else if (0 < x2) {
+            x2 -= 10;
+            littleSquare.style.left = x2 + "px";
+        } else if (0 < y2) {
+            y2 -= 10;
+            littleSquare.style.top = y2 + "px";
+        } else {
+            x1 = 0;
+            y1 = 0;
+            x2 = 300;
+            y2 = 300;
+        }
+    }, 400);
 });
 
 btnStop.addEventListener("click", function () {
