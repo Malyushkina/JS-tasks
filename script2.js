@@ -130,15 +130,19 @@ btnStart.addEventListener("click", function () {
         if (x1 < 300) {
             x1 += 10;
             littleSquare.style.left = x1 + "px";
+            littleSquare.style.top = "0px";
         } else if (y1 < 300) {
             y1 += 10;
             littleSquare.style.top = y1 + "px";
+            littleSquare.style.left = "300px";
         } else if (0 < x2) {
             x2 -= 10;
             littleSquare.style.left = x2 + "px";
+            littleSquare.style.top = "300px";
         } else if (0 < y2) {
             y2 -= 10;
             littleSquare.style.top = y2 + "px";
+            littleSquare.style.left = "0px";
         } else {
             x1 = 0;
             y1 = 0;
